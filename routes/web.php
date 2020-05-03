@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('fileupload', 'FileUploadController@upload');
 
@@ -28,4 +26,8 @@ Route::get('register','FileUploadController@fileparser');
 
 Route::get('play','PokerGameController@play');
 
-Route::get('/win','WinController@getwins');
+Route::get('win','WinController@getwins');
+
+Auth::routes();
+
+Route::get('home', 'HomeController@index')->name('home');
